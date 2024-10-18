@@ -40,7 +40,7 @@ $(KERNEL_OBJS) \
 $(LIBS) \
 
 .PHONY: all clean install install-headers install-kernel
-.SUFFIXES: .o .c .asm
+.SUFFIXES: .o .c .s
 
 all: mini-os.bin
 
@@ -51,7 +51,7 @@ mini-os.bin: $(OBJS) linker.ld
 .c.o:
 	$(CC) -MD -c $< -o $@ -std=gnu11 $(CFLAGS) $(CPPFLAGS)
 
-.asm.o:
+.s.o:
 	nasm -f elf32 $< -o $@
 
 clean:

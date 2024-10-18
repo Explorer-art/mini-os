@@ -3,6 +3,6 @@
 
 void kernel_main(void) {
 	terminal_initialize();
-	puts("Hello World!");
-	printf("This is my OS :)");
+
+	printf("Welcome to Mini OS!");
 }
